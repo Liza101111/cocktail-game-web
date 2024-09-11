@@ -1,1 +1,52 @@
-<p>game works!</p>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Let's Have Fun with Cocktails!</h1>
+  
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <button class="btn btn-primary" (click)="startNewGame()">Start New Game</button>
+      </div>
+    </div>
+  
+    <div class="row mb-4">
+      <div class="col-md-6 offset-md-3">
+        <div class="input-group">
+          <span class="input-group-text">Your Name</span>
+          <input type="text" class="form-control" [(ngModel)]="playerName" placeholder="Enter your name" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="guess" placeholder="Enter your guess" />
+        <button class="btn btn-success" (click)="makeGuess()">Submit Guess</button>
+      </div>
+      
+  
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <button class="btn btn-warning me-2" (click)="skipTurn()">Skip Turn</button>
+        <button class="btn btn-info" (click)="getHint()">Get a Hint</button>
+      </div>
+    </div>
+  
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <button class="btn btn-success" (click)="saveHighScore()">Save High Score</button>
+      </div>
+    </div>
+  
+    <div class="row mt-4">
+      <div class="col-md-8 offset-md-2">
+        <div class="alert alert-info" *ngIf="gameStatus">
+          <h4 class="alert-heading">Game Status</h4>
+          <p>{{ gameStatus }}</p>
+        </div>
+  
+        <div class="alert alert-secondary" *ngIf="hint">
+          <h4 class="alert-heading">Hint</h4>
+          <p>{{ hint }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

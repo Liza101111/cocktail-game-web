@@ -1,0 +1,27 @@
+.container {
+    max-width: 600px;
+  }
+  
+  .card-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+  input {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  .alert {
+    font-weight: bold;
+  }
+  

@@ -4,10 +4,9 @@ import { GameComponent } from './game/game.component';
 import { HighScoreComponent } from './high-score/high-score.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/game', pathMatch: 'full' },
-  { path: 'game', component: GameComponent },
-  { path: 'high-score', component: HighScoreComponent },
-  { path: '**', redirectTo: '/game' }
+  { path: '', component: GameComponent },
+  { path: 'high-scores', component: HighScoreComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -81,7 +81,7 @@ export class GameComponent implements OnInit {
         }
       });
     } else {
-      console.error('Player name cannot be empty');
+      alert('Player name cannot be empty');
     }
   }
   

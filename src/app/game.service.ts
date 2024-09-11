@@ -41,7 +41,8 @@ export class GameService {
     });
   }
   
-  getHighScores(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/high-scores`);
+  getHighScores(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/high-scores`);
   }
+  
 }

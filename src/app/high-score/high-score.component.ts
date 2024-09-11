@@ -8,7 +8,7 @@ import { GameService } from '../game.service';
 })
 export class HighScoreComponent implements OnInit {
   highScores: any[] = [];
-  
+
   constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
@@ -16,13 +16,14 @@ export class HighScoreComponent implements OnInit {
   }
 
   loadHighScores(): void {
-    this.gameService.getHighScores().subscribe(
-      (scores: any[]) => {
-        this.highScores = scores;
+    this.gameService.getHighScores().subscribe({
+      next: (scores: any[]) => {
+        console.log(scores);
+        this.highScores = scores.sort((a, b) => b.score -a.score);
       },
-      (error: any) => {
+      error: (error: any) => {
         console.error('Error fetching high scores:', error);
       }
-    );
+    });
   }
 }

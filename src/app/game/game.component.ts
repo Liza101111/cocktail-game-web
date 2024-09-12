@@ -18,7 +18,12 @@ export class GameComponent implements OnInit {
     this.startNewGame();
   }
 
+  formatTextWithLineBreaks(text: string): string {
+    return text ? text.replace(/\n/g, '<br>') : '';
+  }
+
   startNewGame(): void {
+    this.hint = ''; 
     console.log('Starting a new game...');
     this.gameService.startNewGame().subscribe({
       next: (response: any) => {
